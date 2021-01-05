@@ -97,6 +97,15 @@ public class pigLatin{
 						}
 					}
 				}
+				if (word.length() > 0) {
+					for (int i = 0; i < pain6.length(); i++) {
+						if (word.substring(0,1).equals(pain6.substring(i,i+1))) {
+							finalp += improv;
+							finalp += " ";
+							break;
+						}
+					}
+				}
 				if (word.equals(improv)) {
 					improv = word.substring(1,word.length());
 					improv += word.substring(0,1);
