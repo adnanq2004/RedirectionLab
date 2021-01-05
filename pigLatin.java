@@ -98,12 +98,16 @@ public class pigLatin{
 					}
 				}
 				if (word.length() > 0) {
-					for (int i = 0; i < pain6.length(); i++) {
-						if (word.substring(0,1).equals(pain6.substring(i,i+1))) {
-							finalp += improv;
-							finalp += " ";
-							break;
+					boolean nonnumber = true;
+					for (int i = 0; i < pain5.length() && nonnumber; i++) {
+						if (word.substring(0,1).equals(pain5.substring(i,i+1))) {
+							nonnumber = false;
 						}
+					}
+					if (nonnumber) {
+						finalp += improv;
+						finalp += " ";
+						word += " ";
 					}
 				}
 				if (word.equals(improv)) {
