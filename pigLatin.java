@@ -43,14 +43,17 @@ public class pigLatin{
 		pain2.add("u");
 		String pain4 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String pain5 = "abcdefghijklmnopqrstuvwxyz";
+		String pain6 = "1234567890";
 		Scanner scan = new Scanner(System.in);
 		String finalp;
+		String punc;
 		String improv;
 		String word;
 		while(scan.hasNext()) {
 			finalp = "";
 			Scanner line = new Scanner(scan.nextLine());
 			while (line.hasNext()) {
+				punc = "";
 				word = line.next();
 				for (int i = 0; i <word.length(); i++) {
 					for (int j = 0; j < pain4.length(); j++) {
@@ -61,6 +64,21 @@ public class pigLatin{
 							word = temp;
 						}
 					}
+				}
+				boolean letter = false;
+				for (int i = 0; i < pain5.length() && !letter; i++) {
+					if (word.charAt(word.length() -1) == pain5.charAt(i)) {
+						letter = true;
+					}
+				}
+				for (int i = 0; i < pain6.length() && !letter; i++) {
+					if (word.charAt(word.length() -1) == pain6.charAt(i)) {
+						letter = true;
+					}
+				}
+				if (!letter) {
+					punc = word.substring(word.length()-1, word.length());
+					word = word.substring(0,word.length()-1);
 				}
 				improv = word;
 				if (word.length() > 2) {
@@ -84,6 +102,7 @@ public class pigLatin{
 					improv += word.substring(0,1);
 					improv += "ay";
 				}
+				improv += punc;
 				finalp += improv;
 				finalp += " ";
 			}
