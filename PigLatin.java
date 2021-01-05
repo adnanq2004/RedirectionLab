@@ -108,6 +108,7 @@ public class PigLatin{
 			punc = word.substring(word.length()-1, word.length());
 			word = word.substring(0,word.length()-1);
 		}
+		s = word;
 		if (word.length() > 0) {
 			boolean nonnumber = true;
 			for (int i = 0; i < pain5.length() && nonnumber; i++) {
@@ -121,7 +122,7 @@ public class PigLatin{
 				//word += " ";
 			}
 		}
-		return pigLatin(s);
+		return pigLatin(s) + punc;
 	}
 
 	
