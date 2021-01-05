@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-public class pigLatin{
+public class PigLatin{
 
 	public static void main(String[] args) {
 		ArrayList<String> pain = new ArrayList<String>();
